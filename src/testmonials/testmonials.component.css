@@ -1,0 +1,138 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+:host {
+  /* primary */
+  --bg: #151515;
+  --deftext: #f2f2f2;
+  --lighttext: #e4e4e4;
+  --faded: #26292c;
+  /* accents */
+  /* blue */
+  --blue: #407bff;
+  --fadedblue: #355690;
+  --darkblue: #1c2830;
+  --darkerblue: #1a2025;
+  --black-blue: #141b20;
+  /* green */
+  --green: #52eba1;
+  --darkgreen: #113238;
+  --darkergreen: #1a2421;
+}
+
+section {
+  padding-top: 80px;
+  height: 100vh;
+  background-color: var(--bg);
+  background-image: url("../shared/assets/testimonials/bg.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 !important;
+  padding-top: 5rem !important;
+}
+
+h2,
+h3,
+p {
+  color: #f2f2f2;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 600;
+  margin: 0 auto 35px;
+  font-size: clamp(1.5rem, 1rem + 2.6vw, 2.8rem) !important;
+}
+
+.logo-icon {
+  background-color: var(--darkerblue);
+  border-radius: 50%;
+  width: 80px;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.cardsWrapper {
+  overflow: hidden;
+  padding: 30px 0;
+  white-space: nowrap;
+  position: relative;
+  /* top: 50%; */
+  transform: translate(0, 50%);
+}
+
+.cardsWrapper:before,
+.cardsWrapper:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.cardsWrapper:before {
+  left: 0;
+  filter: blur(35px);
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(14, 14, 14));
+}
+
+.cardsWrapper:after {
+  right: 0;
+  filter: blur(35px);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgb(14, 14, 14)
+  );
+}
+
+.cardsWrapper:hover .card-slide {
+  animation-play-state: paused;
+}
+
+.card-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.card-slide img {
+  margin: 0 40px;
+  border-radius: 20px;
+}
+
+/* Media Queries for Mobile View */
+@media (max-width: 768px) {
+  .title {
+    max-width: 70%;
+    padding: 0 12px;
+  }
+
+  .carousel-container {
+    padding: 20px;
+  }
+
+  .carousel-wrapper {
+    gap: 0px;
+  }
+
+  .testimonial-card {
+    flex: 0 0 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+}

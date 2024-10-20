@@ -1,0 +1,143 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+section {
+  background-color: #151515;
+  min-height: 100vh;
+  background-image: url(../shared/assets/courses/Courses.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2,
+h3,
+p {
+  color: #fff;
+}
+#carouselExample {
+  width: 60%;
+}
+
+#coursesSectionTitle {
+  font-size: clamp(1.5rem, 1rem + 2.6vw, 2.8rem) !important;
+}
+#coursesSectionDesc {
+  font-size: clamp(0.6rem, 0.8rem + 0.7vw, 1.5rem) !important;
+  font-weight: 200 !important;
+  opacity: 0.8;
+}
+#myCoursesCardsTitle {
+  font-size: clamp(1.3rem, 1rem + 2vw, 2rem) !important;
+}
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.course-card {
+  transition: all 0.5s ease-in-out;
+  display: flex;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  text-align: center;
+  width: 18rem;
+  height: 350px;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.active-card {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.left-card,
+.right-card {
+  opacity: 0.5;
+  transform: scale(0.9);
+}
+
+.custom-arrow {
+  width: 40px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  z-index: 2;
+}
+
+.carousel-control-prev {
+  left: 10px;
+}
+
+.carousel-control-next {
+  right: 10px;
+}
+
+@media screen and (max-width: 1050px) {
+  #carouselExample {
+    min-width: 400px;
+  }
+}
+@media screen and (max-width: 430px) {
+  #carouselExample {
+    min-width: 100%;
+    width: 100%;
+    .carousel-item img {
+      width: 110% !important;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .course-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .card {
+    width: 14rem;
+    height: 250px;
+    font-size: 12px;
+  }
+
+  .card-title {
+    font-size: 14px;
+  }
+
+  .custom-arrow {
+    width: 30px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 60%;
+  }
+}

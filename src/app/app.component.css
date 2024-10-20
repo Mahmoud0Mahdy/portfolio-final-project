@@ -1,0 +1,9 @@
+app-navbar {
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+}
+
+/* app-navbar.scrolled {
+    margin-top: 1rem;
+} */
